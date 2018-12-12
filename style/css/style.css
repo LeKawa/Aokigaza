@@ -1,0 +1,302 @@
+a,
+abbr,
+acronym,
+address,
+applet,
+article,
+aside,
+audio,
+b,
+big,
+blockquote,
+body,
+canvas,
+caption,
+center,
+cite,
+code,
+dd,
+del,
+details,
+dfn,
+div,
+dl,
+dt,
+em,
+embed,
+fieldset,
+figcaption,
+figure,
+footer,
+form,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+header,
+hgroup,
+html,
+i,
+iframe,
+img,
+ins,
+kbd,
+label,
+legend,
+li,
+mark,
+menu,
+nav,
+object,
+ol,
+output,
+p,
+pre,
+q,
+ruby,
+s,
+samp,
+section,
+small,
+span,
+strike,
+strong,
+sub,
+summary,
+sup,
+table,
+tbody,
+td,
+tfoot,
+th,
+thead,
+time,
+tr,
+tt,
+u,
+ul,
+var,
+video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline; }
+
+/* HTML5 display-role reset for older browsers */
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+  display: block; }
+
+body {
+  line-height: 1; }
+
+ol,
+ul {
+  list-style: none; }
+
+blockquote,
+q {
+  quotes: none; }
+
+blockquote:after, blockquote:before {
+  content: '';
+  content: none; }
+
+q:after, q:before {
+  content: '';
+  content: none; }
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0; }
+
+body {
+  background-color: #C9111C;
+  font-family: 'OPTICIAN'; }
+
+@font-face {
+  font-family: 'OPTICIAN';
+  src: url("../../font/Optiker-K.ttf"); }
+.Header {
+  z-index: 10000;
+  position: fixed;
+  right: 15px;
+  display: flex;
+  margin-top: 50px;
+  margin-left: 75px;
+  margin-right: 40px;
+  justify-content: flex-end; }
+  .Header_Link {
+    transition: .2s all ease-Out; }
+    .Header_Link:hover {
+      transform-origin: center;
+      transform: rotate(-5deg); }
+    .Header_Link > a {
+      text-decoration: none;
+      color: black;
+      letter-spacing: 3px;
+      padding-right: 35px; }
+
+.Photoone {
+  height: 100vh;
+  margin-left: 10vw;
+  margin-right: 10vw;
+  display: flex;
+  justify-content: space-between;
+  align-items: center; }
+  .Photoone_1 {
+    width: 30%;
+    opacity: 0; }
+    .Photoone_1 > img {
+      width: 100%;
+      opacity: 0; }
+  .Photoone_2 {
+    width: 20%;
+    opacity: 0;
+    margin-top: 80vh; }
+    .Photoone_2 > img {
+      width: 100%; }
+
+.Phototwo {
+  margin-top: 200px;
+  height: 60vh;
+  margin-left: 15vw;
+  margin-right: 10vw;
+  display: flex; }
+  .Phototwo_1 {
+    width: 40%; }
+    .Phototwo_1 > img {
+      width: 100%;
+      height: auto; }
+
+.lag {
+  position: relative; }
+  .lag:nth-child(1) .image__bottom,
+  .lag:nth-child(1) .image__inner,
+  .lag:nth-child(1) .image__top {
+    background-image: url("../../img/photo2.jpg"); }
+
+.image {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  z-index: -1;
+  transform: translate3d(-50%, -50%, 0);
+  width: 60vmin;
+  height: 80vmin;
+  transition: transform 1000ms cubic-bezier(0.77, 0, 0.175, 1); }
+  .image__bottom, .image__inner, .image__top {
+    width: 100%;
+    background-size: 60vmin 80vmin; }
+  .image__top {
+    height: 50%;
+    background-position: top; }
+  .image__bottom {
+    height: 50%;
+    background-position: 0 99%; }
+  .image__stretch {
+    height: 20%;
+    overflow: hidden;
+    position: relative;
+    z-index: 2;
+    margin: -1px 0; }
+  .image__inner {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-position: 0 50%;
+    height: 1px;
+    transform: scaleY(1000); }
+
+.lag1 {
+  position: relative;
+  width: 80%; }
+  .lag1:nth-child(1) .image__bottom,
+  .lag1:nth-child(1) .image__inner,
+  .lag1:nth-child(1) .image__top {
+    background-image: url("../../img/photo1.jpg"); }
+
+.lag2 {
+  position: relative;
+  width: 80%; }
+  .lag2:nth-child(1) .image__bottom,
+  .lag2:nth-child(1) .image__inner,
+  .lag2:nth-child(1) .image__top {
+    background-image: url("../../img/photo3.jpg"); }
+
+::-webkit-scrollbar {
+  width: 10px; }
+
+::-webkit-scrollbar-track {
+  background: #C9111C; }
+
+::-webkit-scrollbar-thumb {
+  background: black; }
+
+.Fixed {
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  font-size: 28px; }
+  .Fixed_Text {
+    clip-path: inset(0px 0px 100% 1px);
+    z-index: 100;
+    position: fixed; }
+  .Fixed_Svg {
+    opacity: 0;
+    position: fixed;
+    z-index: 10;
+    display: flex;
+    justify-content: center;
+    align-items: center; }
+    .Fixed_Svg > svg {
+      width: 270px;
+      height: 54px; }
+  .Fixed_Svg1 {
+    position: fixed;
+    z-index: 8;
+    display: flex;
+    opacity: 0;
+    justify-content: center;
+    align-items: center; }
+    .Fixed_Svg1 > svg {
+      margin-left: 15px;
+      margin-bottom: 15px;
+      width: 270px;
+      height: 54px; }
+  .Fixed_Svg2 {
+    opacity: 0;
+    position: fixed;
+    z-index: 7;
+    display: flex;
+    justify-content: center;
+    align-items: center; }
+    .Fixed_Svg2 > svg {
+      margin-left: 30px;
+      margin-bottom: 30px;
+      width: 270px;
+      height: 54px; }
+
+*,
+*:after,
+*:before {
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box; }
+
+/*# sourceMappingURL=style.css.map */

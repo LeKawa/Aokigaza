@@ -1,0 +1,198 @@
+body {
+  background-color: #C9111C;
+  font-family: 'OPTICIAN';
+}
+@font-face {
+  font-family: 'OPTICIAN';
+  src: url("../../font/Optiker-K.ttf");
+}
+
+.Header {
+  z-index: 10000;
+  position: fixed;
+  right: 15px;
+  display: flex;
+  margin-top: 50px;
+  margin-left: 75px;
+  margin-right: 40px;
+  justify-content: flex-end;
+
+  &_Link {
+    transition: .2s all ease-Out;
+    &:hover {
+      transform-origin: center;
+      transform: rotate(-5deg);
+    }
+
+    & > a {
+      text-decoration: none;
+      color: black;
+      letter-spacing: 3px;
+      padding-right: 35px;
+    }
+  }
+}
+
+.Photoone {
+  height: 100vh;
+  margin-left: 10vw;
+  margin-right: 10vw;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  &_1 {
+    width: 30%;
+    opacity: 0;
+
+    & > img {
+      width: 100%;
+      opacity: 0;
+    }
+  }
+
+  &_2 {
+    width: 20%;
+    opacity: 0;
+    margin-top: 80vh;
+
+    & > img {
+      width: 100%;
+    }
+  }
+}
+
+.Phototwo {
+  margin-top: 200px;
+  height: 60vh;
+  margin-left: 15vw;
+  margin-right: 10vw;
+  display: flex;
+
+  &_1 {
+    width: 40%;
+
+    & > img {
+      width: 100%;
+      height: auto;
+    }
+  }
+}
+$w: 60vmin;
+$h: 80vmin;
+$p: 0.5;
+$s: 0.2;
+$ease: cubic-bezier(0.770, 0.000, 0.175, 1.000);
+
+.lag {
+  position: relative;
+
+  &:nth-child(1) {
+    .image__bottom,
+    .image__inner,
+    .image__top {
+      background-image: url("../../img/photo2.jpg");
+    }
+  }
+}
+
+.image {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  z-index: -1;
+  transform: translate3d(-50%, -50%, 0);
+  width: $w;
+  height: $h;
+  transition: transform 1000ms $ease;
+
+  &__bottom,
+  &__inner,
+  &__top {
+    width: 100%;
+    background-size: $w $h;
+  }
+
+  &__bottom,
+  &__stretch,
+  &__top {
+    //transition: transform 200ms linear;
+  }
+
+  &__top {
+    height: $p*100%;
+    background-position: top;
+  }
+
+  &__bottom {
+    height: (1-$p)*100%;
+    background-position: 0 99%;
+  }
+
+  &__stretch {
+    height: $s*100%;
+    overflow: hidden;
+    position: relative;
+    z-index: 2;
+    margin: -1px 0;
+  }
+
+  &__inner {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-position: 0 $p*100%;
+    height: 1px;
+    transform: scaleY(1000);
+  }
+}
+
+.lag1 {
+  position: relative;
+  width: 80%;
+
+  &:nth-child(1) {
+    .image__bottom,
+    .image__inner,
+    .image__top {
+      background-image: url("../../img/photo1.jpg");
+    }
+  }
+}
+
+.lag2 {
+  position: relative;
+  width: 80%;
+
+  &:nth-child(1) {
+    .image__bottom,
+    .image__inner,
+    .image__top {
+      background-image: url("../../img/photo3.jpg");
+    }
+  }
+}
+
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: #C9111C;
+}
+
+::-webkit-scrollbar-thumb {
+  background: black;
+}
+//
+// .ball {
+//   border: solid 1px black;
+//   width: 30px;
+//   height: 30px;
+//   position: absolute;
+//   top: 0;
+//   left: 0;
+//   -webkit-transform: translate(-50%, -50%);
+//   -ms-transform: translate(-50%, -50%);
+//   transform: translate(-50%, -50%);
+// }
